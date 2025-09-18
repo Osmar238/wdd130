@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
             --color-primary: darkblue;
             --color-secondary: #eee;
@@ -28,6 +34,8 @@
             border: 1px solid var(--color-border);
             padding: 2px;
             box-shadow: 0 0 30px var(--color-shadow);
+            float: right;
+            margin: 0 0 1rem 1rem;
         }
 
         p {
@@ -43,3 +51,26 @@
             height: auto;
             margin: 1rem;
          }
+
+         aside h2{
+            position: absolute;
+            right: -10%;
+            left: 38%;
+            transform: translate(-50%, -50%);
+            color: black;
+         }
+
+/* Class Selectors */
+
+.box{
+    margin: 1rem;
+    border: 1px solid rgb (0 0 0 / 10%);
+    padding: 1rem;
+    background-color: rgb(216, 213, 213);
+    color: #000;
+}
+
+aside{
+    width: 20em;
+    text-align: center;
+}
