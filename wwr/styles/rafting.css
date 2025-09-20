@@ -78,7 +78,7 @@ h1 {
     position: absolute;
     top: 15px;
     width: 100%;
-    padding: 1px;
+
     text-align: center;
     opacity: 0.7;
     background-color: var(--accent1-color);
@@ -89,10 +89,18 @@ h1 {
 .hero article img {
     float: right;
     margin-left: 10px ;
-    margin-top: 7px;
     height: auto;
-    padding: 1px;
-    width: 100px;
+    padding: 5px;
+    width: 90px;
+}
+
+.hero h3{
+    color: #fff;
+    padding: 0px;
+    text-align: center;
+    font-size: medium;
+
+
 }
 
 .hero article {
@@ -103,9 +111,8 @@ h1 {
     background-color: var(--accent1-color);
     color: #fff;
     text-align: justify;
-   padding: 2px 8px;       /* Muy poco padding arriba/abajo */
-    text-align: justify;
-    font-size: 1rem;        /* O más pequeño si quieres */
+    padding: 2px 8px;       
+    font-size: small;      
     line-height: 1.1;   
 }
 
@@ -131,12 +138,12 @@ section h2{
 }
 
 footer {
-    border-top: 2px solid #ccc; /* Línea arriba del footer */
-    padding: 8px 0 0 0;         /* Espacio arriba, puedes ajustar */
-    margin-top: 16px;           /* Espacio entre el contenido y el footer */
+    border-top: 2px solid #ccc;
+    padding: 8px 0 0 0;       
+    margin-top: 16px;          
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;                   /* Espacio entre texto y redes sociales */
+    gap: 8px;                   
 }
