@@ -58,7 +58,7 @@ header img {
 
 header{
     height: 50%;
-    background-color: var(#fff);
+    background-color: #fff;
     color: var(--secundary-color);
 }
 
