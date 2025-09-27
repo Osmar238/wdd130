@@ -24,6 +24,7 @@ header, main, footer{
 
     width: 840px;
     margin: auto;
+    padding: 5px;
 }
 
 h1,h2{
@@ -57,9 +58,24 @@ header img {
 }
 
 header{
-    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
     background-color: #fff;
     color: var(--secundary-color);
+}
+
+nav ul{
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25%;
 }
 
 .hero{
@@ -115,22 +131,58 @@ h1 {
     font-size: small;      
     line-height: 1.1;   
 }
-
-section{
-
-    padding: 5px;
-}
-
-section h2{
-    margin-top: 10px;
-    width: 100%;
-    height: auto;
-    padding: 15px;
-    font-size: 1.5em;
+.history-section h2 {
     text-align: center;
-    background-color: var(--accent1-color);
+    margin-bottom: 20px;
+    background-color: #1e4262;
     color: #fff;
+    padding: 15px;
+    margin-top: 10px;
 }
+
+.history-content {
+    display: flex;             
+    align-items: center;      
+    justify-content: center;   
+    gap: 20px;                 
+}
+
+.history-content img {
+    display: block;
+    max-width: 300px;
+    height: auto;
+}
+
+.history-content .left-text,
+.history-content .right-text {
+    max-width: 200px;     
+    text-align: left;
+}
+.adventure-section {
+    padding: 40px 20px;
+    background-color:#1e4262;
+    text-align: center;
+}
+
+.adventure-section h2 {
+    margin-bottom: 20px;
+}
+
+
+.adventure-section {
+    display: flex;
+    justify-content: center;  
+    align-items: center;     
+    gap: 20px;                
+    overflow-x: auto;     
+}
+
+.adventure-section img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+}
+
 
 .socialmedia a img{
     width: 24px;
@@ -139,11 +191,17 @@ section h2{
 
 footer {
     border-top: 2px solid #ccc;
-    padding: 8px 0 0 0;       
-    margin-top: 16px;          
+    padding: 8px 0;
+    margin-top: 16px;
+}
+
+footer p {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;                   
+    margin-bottom: 8px;
+}
+
+footer .socialmedia {
+    display: flex;             
+    justify-content: flex-end;   
+    gap: 10px;                   
 }
