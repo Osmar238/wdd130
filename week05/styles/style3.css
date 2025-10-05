@@ -1,0 +1,53 @@
+/* 1. Estilos esenciales para la tabla */
+table {
+    /* ¡Truco Mágico! Elimina el espacio entre celdas */
+    border-collapse: collapse; 
+    border: 2px solid #ccc;
+    font-family: sans-serif;
+    width: 60%; /* Hacemos la tabla un poco más pequeña */
+    margin: 20px auto; /* La centramos en la página */
+}
+
+/* 2. Estilos para los bordes y el espacio interno */
+th,
+td {
+    border: 1px solid #aaa;
+    /* Espacio interno para que el texto respire */
+    padding: 8px 12px; 
+    text-align: left;
+}
+
+/* 3. Estilo para el encabezado */
+thead th {
+    /* Fondo negro con texto blanco */
+    background-color: #000; 
+    color: #fff;
+    font-weight: 700;
+}
+
+/* 4. Estilos para las filas pares (¡Fácil de leer!) */
+tbody > tr:nth-of-type(even) {
+    background-color: #f0f0f0;
+}
+
+/* 5. Estilo para el pie de página (totales) */
+tfoot {
+    background-color: #e0e0e0;
+}
+
+/* Alinear el total a la derecha */
+tfoot td {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* 6. Estilos para el título */
+caption {
+    /* Título abajo */
+    caption-side: bottom; 
+    padding: 10px;
+    font-weight: bold;
+    /* Título en cursiva */
+    font-style: italic; 
+    color: #444;
+}
