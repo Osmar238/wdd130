@@ -1,0 +1,403 @@
+/* -------------------------------------- */
+/* 0. VARIABLES Y RESET BÁSICO */
+/* -------------------------------------- */
+
+:root {
+    /* Paleta de Colores (Ajustada para Contraste AA - Criterio 6) */
+    --primary-color: #2a3209; /* Verde oscuro (Buen contraste sobre blanco) */
+    --secondary-color: #5a3e30; /* Marrón/Sepia (Buen contraste sobre blanco) */
+    --accent1-color: #1e4262; /* Azul marino (Buen contraste sobre blanco) */
+    --accent2-color: #7ec5ef; /* Azul cielo (Usar solo para fondos o elementos grandes sin texto pequeño) */
+    --cta-background: #e95420; /* Naranja/Rojo (Alto contraste para botones) */
+    --cta-text: white;
+    
+    --heading-font: "Times New Roman", "Georgia", serif;
+    --body-font: Arial, Helvetica, sans-serif;
+    --max-content-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+/* -------------------------------------- */
+/* 1. HEADER Y NAVEGACIÓN (CRITERIO 13) */
+/* -------------------------------------- */
+
+/* -------------------------------------- */
+/* 1. HEADER Y NAVEGACIÓN (CRITERIO 13) */
+/* -------------------------------------- */
+
+/* NUEVA REGLA: CONTENEDOR EXTERNO (Resuelve ancho completo) */
+.site-header-wrapper {
+    /* El ancho es 100% por defecto */
+    background-color: var(--accent1-color); /* Color de borde a borde */
+    /* Aquí puedes poner un padding vertical si lo necesitas */
+}
+
+/* NUEVA REGLA: CONTENEDOR INTERNO (Resuelve alineación Grid) */
+.header-content-container {
+    /* Grid (Grid-template-columns: auto 1fr) ahora va aquí */
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    align-items: center; 
+    
+    /* Centra y limita el ancho */
+    max-width: var(--max-content-width); 
+    margin: 0 auto; 
+    
+    /* Padding para crear el espacio entre el borde de la pantalla y el contenido */
+    padding: 10px 20px; 
+}
+
+/* El logo, ahora que es hijo directo de .header-content-container, se alineará bien */
+.header-content-container img { 
+    width: 80px; 
+    height: auto; 
+    padding: 5px 0; 
+    margin-left: 0;
+}
+
+nav ul { 
+    list-style: none; 
+    display: flex; 
+    /* Esta regla EMPUJA los enlaces a la derecha de la columna 1fr. */
+    justify-content: flex-end; 
+    gap: 20px; 
+}
+
+nav a {
+    text-decoration: none;
+    /* CAMBIO: Usamos var(--cta-text) o blanco para asegurar el contraste sobre el fondo azul */
+    color: #fff; 
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--cta-background);
+}
+
+
+/* -------------------------------------- */
+/* 2. HOME: HERO SECTION (CRITERIO 7, 8, 10) */
+/* -------------------------------------- */
+
+.hero {
+    /* CRITERIO 7: Imagen de fondo de ancho completo */
+    /* Asegúrate que 'images/hero-river.jpg' es la ruta correcta */
+    background-image: url('/wwr/images/trips.jpg'); 
+    background-size: cover;
+    background-position: center;
+    
+    /* Altura suficiente para mostrar la imagen */
+    height: 70vh; 
+    width: 100%;
+    
+    /* CRITERIO 8: Centrar título y CTA */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* CRITERIO 6: Contraste para el texto sobre imagen */
+    color: var(--cta-text); 
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.hero h1 {
+    font-size: 3.8rem;
+    color: var(--cta-text);
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* CTA (Call to Action) - Criterio 10 */
+.cta-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--cta-background); 
+    color: var(--cta-text); 
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #c94615;
+}
+
+/* -------------------------------------- */
+/* 3. HOME: NEWSLETTER & GRID (CRITERIO 9, 11, 12) */
+/* -------------------------------------- */
+
+.newsletter-signup {
+    padding: 40px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+    max-width: 800px;
+    margin: 40px auto; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.newsletter-signup h2 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.newsletter-signup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.newsletter-signup .form-group {
+    width: 100%;
+    max-width: 350px;
+    text-align: left;
+}
+
+.newsletter-signup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.newsletter-signup input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.newsletter-signup button[type="submit"] {
+    padding: 12px 25px;
+    background-color: var(--primary-color); 
+    color: var(--cta-text);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* CRITERIO 11, 12: CSS GRID LAYOUT PARA CONTENIDO HOME */
+.home-grid-content {
+    padding: 50px 20px;
+}
+
+.grid-container {
+    /* CRITERIO 11: Usa CSS Grid */
+    display: grid;
+    /* CRITERIO 12: Layout más allá de una sola columna (3 columnas) */
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 30px;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+}
+
+.grid-item {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* La misión ocupa todo el ancho de la rejilla */
+.mission-statement {
+    grid-column: 1 / span 3; 
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.grid-item img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* -------------------------------------- */
+/* 4. FOOTER (CRITERIO 13) */
+/* -------------------------------------- */
+
+footer { 
+    border-top: 2px solid #ccc; 
+    padding: 15px 20px; 
+    margin-top: 50px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 20px; 
+    max-width: var(--max-content-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer p { 
+    flex: 1; 
+    text-align: left; 
+    margin: 0; 
+    font-size: 0.9rem;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.socialmedia img { 
+    width: 24px; 
+    height: auto; 
+}
+
+
+/* -------------------------------------- */
+/* 5. DISEÑO RESPONSIVE (MÓVILES Y TABLETS) */
+/* -------------------------------------- */
+
+@media screen and (max-width: 900px) {
+    
+    .grid-container {
+        /* Reducir a 2 columnas en tablet */
+        grid-template-columns: 1fr 1fr; 
+    }
+    
+    .mission-statement {
+        /* Ocupa las 2 columnas en tablet */
+        grid-column: 1 / span 2; 
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    footer p {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+    /* Reducir el Hero en móvil */
+    .hero {
+        height: 50vh; 
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    /* CRITERIO 12: Asegura que el layout es utilizable en móvil (1 columna) */
+    .grid-container {
+        grid-template-columns: 1fr; 
+    }
+    
+    .mission-statement {
+        grid-column: 1 / span 1; 
+    }
+
+    /* Navegación apilada */
+    header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    nav ul {
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+}
+
+/* CRITERIO 17: DISEÑO AVANZADO PARA TRIP CARDS */
+.trip-details-container {
+    /* CLAVE: Crea columnas de tarjetas que se ajustan */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 40px;
+    max-width: var(--max-content-width);
+    margin: 40px auto;
+    padding: 0 20px; /* Asegura espacio lateral */
+}
+
+.trip-card {
+    /* Estilos visuales para cada tarjeta */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden; /* Esto es clave para las imágenes */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.trip-card img {
+    /* Hace que la imagen ocupe todo el ancho de la tarjeta */
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.trip-summary-table {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    /* CLAVE: Centra el texto de esta sección, incluido el <h2> */
+    text-align: center; 
+}
+
+.trip-summary-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.trip-summary-table th, .trip-summary-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+.trip-summary-table th {
+    /* Usa tu color principal de contraste */
+    background-color: var(--accent1-color);
+    color: white;
+}
+
+/* Centra el título principal de la página de viajes */
+main h1 {
+    text-align: center; 
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+    font-size: 2.5rem;
+}
+/* Centra el encabezado y el contenido del CTA */
+.trips-cta h2, .trips-cta a {
+    text-align: center;
+    display: block; /* Asegura que el enlace CTA ocupa su propio bloque para centrarse */
+    margin: 15px auto;
+}
